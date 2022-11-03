@@ -16,48 +16,45 @@
             }
         },
         nodeStructure: {
-            text: { name: "Time between symptoms and the first penicillin intake",
-            HTMLid: "root" ,
-         //   title: "One of kind",
-          //  desc: "A basic example",
-           // data-foo: " data Attribute for node" s
-        },
+            text: { name: "Periodo de tempo entre o aparecimento do sintomas " ,
+            title: "e a primeira toma de penicilina"},
+           HTMLid: "root" ,
             children: [
                 {
-                    text: { name: "> 2 hours" },
+                    text: { name: "igual ou superior a 2 horas" },
                     collapsed: true,
                     children: [
                         {
-                            text: { name: "New administration of penicillin without reaction" },
+                            text: { name: "Nova administraçãod de  ",
+                        title:"penicilina sem reacção" },
                             children: [
-                                { text: { name: "Low risk of penicillin allergy" } },
+                                { text: { name: "Baixo risco de alergia a penicilina" } },
                             ]
                         },
                     ]
                 },
                 {
-                    text: { name: "<2 hours" },
+                    text: { name: "abaixo de 2 horas" },
                     collapsed: true,
-
-                    childrenDropLevel: 1,
                     children: [
                         {
-                            text: { name: "New administration of penicillin without reaction" },
+                            text: { name: "Nova administraçãod de  ",
+                            title:"penicilina sem reacção" },
                             children: [
-                                { text: { name: "Low risk of penicillin allergy" } },
+                                { text: { name: "Baixo risco de alergia a penicilina" } },
                             ]
                         },
                         {
-                            text: { name: "Serious reaction (hospitalization, epinephrine)" },
+                            text: { name: "Reacão severa (hospitalização, epinefrina, ...)" },
                             children: [
-                                { text: { name: "High risk of penicillin allergy" } },
+                                { text: { name: "Alto risco de alergia a penicilina" } },
                             ]
                         },
                         {
-                            text: { name: "No serious Reaction" },
+                            text: { name: "Sem reacção Severa" },
                             children: [
-                                { text: { name: "Skin Envolvement" } },
-                                { text: { name: "No Skin Envolvement" } },
+                                { text: { name: "Envolvimento Pele" } },
+                                { text: { name: "Sem envolvimento Pele" } },
 
                             ]
                         },
@@ -65,13 +62,12 @@
                     ]
                 },
                 {
-                    text: { name: "Unknown" },
-                    childrenDropLevel: 1,
+                    text: { name: "Desconhecido" },
                     collapsed: true,
-
                     children: [
                         {
                             text: { name: "Time between symptoms and the first penicillin intake" },
+                            HTMLid: "finalroot-1" ,
                         }
                     ]
                 }
