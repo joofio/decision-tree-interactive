@@ -16,7 +16,12 @@
             }
         },
         nodeStructure: {
-            text: { name: "Time between symptoms and the first penicillin intake" },
+            text: { name: "Time between symptoms and the first penicillin intake",
+            HTMLid: "root" ,
+         //   title: "One of kind",
+          //  desc: "A basic example",
+           // data-foo: " data Attribute for node" s
+        },
             children: [
                 {
                     text: { name: "> 2 hours" },
