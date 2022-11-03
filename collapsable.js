@@ -17,11 +17,10 @@
         },
         nodeStructure: {
             text: { name: "Time between symptoms and the first penicillin intake" },
-           // image: "img/malory.png",
             children: [
                 {
                     text: { name: "> 2 hours" },
-                    collapsed: false,
+                    collapsed: true,
                     children: [
                         {
                             text: { name: "New administration of penicillin without reaction" },
@@ -33,6 +32,8 @@
                 },
                 {
                     text: { name: "<2 hours" },
+                    collapsed: true,
+
                     childrenDropLevel: 1,
                     children: [
                         {
@@ -61,6 +62,8 @@
                 {
                     text: { name: "Unknown" },
                     childrenDropLevel: 1,
+                    collapsed: true,
+
                     children: [
                         {
                             text: { name: "Time between symptoms and the first penicillin intake" },
