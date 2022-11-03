@@ -40,30 +40,72 @@
 
 var treeData = [
   {
-    "name": "Top Level",
+    "name": "Time between symptoms and the first penicillin intake",
     "parent": "null",
     "children": [
       {
-        "name": "Level 2: A",
-        "parent": "Top Level",
+        "name": "< 2 hours",
+        "parent": "Time between symptoms and the first penicillin intake",
         "children": [
           {
-            "name": "Son of A",
-            "parent": "Level 2: A"
+            "name": "New administration of penicillin without reaction",
+            "parent": "< s2 hours",
+            "children": [
+              {
+                "name": "Low risk of penicillin allergy"
+                //"parent": "< 2 hours",
+              }
+            ]
           },
           {
-            "name": "Daughter of A",
-            "parent": "Level 2: A"
+            "name": "Serious reaction (hospitalization, epinephrine)",
+            "parent": "< 2 hours",
+            "children": [
+              {
+                "name": "High risk of penicillin allergy"
+                //"parent": "< 2 hours",
+              }
+            ]
+          },
+          {
+            "name": "No reaction",
+            "parent": "< 2 hours",
+            "children": [
+              {
+                "name": "Skin envolvment",
+                //"parent": "< 2 hours",
+                "children": [
+                  {
+                    "name": "Without Pruritus"
+                    //"parent": "< 2 hours",
+                  },
+                  {
+                    "name": "With Pruritus"
+                    //"parent": "< 2 hours",
+                  }
+                ]
+              },
+              {
+                "name": "No skin envolvment"
+                //"parent": "< 2 hours",
+              }
+            ]
           }
         ]
       },
       {
-        "name": "Level 2: B",
-        "parent": "Top Level"
+        "name": "> 2 hours",
+        "parent": "Time between symptoms and the first penicillin intake"
+      },
+      {
+        "name": "Unknown",
+        "parent": "Time between symptoms and the first penicillin intake"
       }
     ]
   }
 ];
+
+
 
 
 // ************** Generate the tree diagram	 *****************
