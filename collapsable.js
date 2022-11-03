@@ -20,34 +20,39 @@
            // image: "img/malory.png",
             children: [
                 {
-                    text: { name: "< 2 hours" },
-                    collapsed: true,
+                    text: { name: "> 2 hours" },
+                    collapsed: false,
                     children: [
                         {
-                            image: "img/figgs.png"
-                        }
+                            text: { name: "New administration of penicillin without reaction" },
+                            children: [
+                                { text: { name: "Low risk of penicillin allergy" } },
+                            ]
+                        },
                     ]
                 },
                 {
-                    text: { name: ">2 hours" },
+                    text: { name: "<2 hours" },
                     childrenDropLevel: 1,
                     children: [
                         {
                             text: { name: "New administration of penicillin without reaction" },
                             children: [
-                                { text: { name: "No need for further treatment" } },
+                                { text: { name: "Low risk of penicillin allergy" } },
                             ]
                         },
                         {
-                            text: { name: "New administration of penicillin without reaction" },
+                            text: { name: "Serious reaction (hospitalization, epinephrine)" },
                             children: [
-                                { text: { name: "No need for further treatment" } },
+                                { text: { name: "High risk of penicillin allergy" } },
                             ]
                         },
                         {
-                            text: { name: "New administration of penicillin without reaction" },
+                            text: { name: "No serious Reaction" },
                             children: [
-                                { text: { name: "No need for further treatment" } },
+                                { text: { name: "Skin Envolvement" } },
+                                { text: { name: "No Skin Envolvement" } },
+
                             ]
                         },
 
@@ -61,18 +66,8 @@
                             text: { name: "Time between symptoms and the first penicillin intake" },
                         }
                     ]
-                },
-                {
-                    pseudo: true,
-                    children: [
-                        {
-                            text: { name: "Time between symptoms and the first penicillin intake" },
-                        },
-                        {
-                            text: { name: "Time between symptoms and the first penicillin intake" },
-                        }
-                    ]
                 }
+              
             ]
         }
     };
