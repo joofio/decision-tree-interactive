@@ -33,8 +33,24 @@
                     childrenDropLevel: 1,
                     children: [
                         {
-                            text: { name: "Time between symptoms and the first penicillin intake" },
-                        }
+                            text: { name: "New administration of penicillin without reaction" },
+                            children: [
+                                { text: { name: "No need for further treatment" } },
+                            ]
+                        },
+                        {
+                            text: { name: "New administration of penicillin without reaction" },
+                            children: [
+                                { text: { name: "No need for further treatment" } },
+                            ]
+                        },
+                        {
+                            text: { name: "New administration of penicillin without reaction" },
+                            children: [
+                                { text: { name: "No need for further treatment" } },
+                            ]
+                        },
+
                     ]
                 },
                 {
