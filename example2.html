@@ -39,20 +39,29 @@
             pyscript.write('pi', f'π is approximately {pi:.3f}')
           </py-script>
          <p>Resultado:  <div id="resultado"><py-script>
-            p= document.getElementById("collapsable-example")
+            from pyodide.ffi   import create_proxy
 
             def assess():
                 if document.getElementById("finalroot-1").style.visibility == "hidden":
                     #print(document.getElementById("finalroot-1").style.visibility)
                     print("ook")
                     pyscript.write('resultado', 'hidden')
+                else:
+                    pyscript.write('resultado', 'visible')
 
-            p.on_change= assess()
                  
+            def main():
+                # Create a Python proxy for the callback function
+                # process_file() is your function to process events from FileReader
+                file_event = create_proxy(assess)
+            
+                # Set the listener to the callback
+                e = document.getElementById("finalroot-1")
+                print(e.style.visibility)
+                e.addEventListener("change", file_event, False)
 
 
-
-
+            main()
           </py-script></div></p>
         <button id="btn2">Avançar</button>
     </div>
