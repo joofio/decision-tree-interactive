@@ -82,10 +82,10 @@ above_2_acute = {
 above_2_acute_risk = {
     parent: above_2_acute,
     text: { name: "Alto risco de alergia a penicilina" },
-    HTMLid: "final-node",
+    HTMLclass: "final-node",
     HTMLid: "l1_3_1",
 
-    
+
 
 }
 
@@ -112,9 +112,9 @@ above_2_normal_skin_Mucosal_risk = {
     parent: above_2_normal_skin_Mucosal,
     text: { name: "Alto risco de alergia a penicilina" },
     HTMLid: "l1_4_1_1_1",
-    HTMLid: "final-node",
+    HTMLclass: "final-node",
 
-    
+
 }
 
 above_2_normal_skin_below48 = {
@@ -127,9 +127,9 @@ above_2_normal_skin_below48_risk = {
     parent: above_2_normal_skin_below48,
     text: { name: "Baixo risco de alergia a penicilina" },
     HTMLid: "l1_4_1_2_1",
-    HTMLid: "final-node",
+    HTMLclass: "final-node",
 
-    
+
 }
 
 above_2_normal_skin_above48 = {
@@ -144,7 +144,7 @@ above_2_normal_skin_above48_risk = {
     HTMLclass: "final-node",
     HTMLid: "l1_4_1_3_1",
 
-    
+
 }
 
 
@@ -170,7 +170,7 @@ above_2_normal_no_skin_risk = {
 unknown = {
     parent: rootnode,
     text: { name: "Desconhecido" },
-    HTMLid: "l2",
+    HTMLid: "l3",
     collapsed: true,
 }
 
@@ -183,13 +183,13 @@ unknown_new_admin = {
     },
     collapsed: true,
 
-    HTMLid: "l2_1",
+    HTMLid: "l3_1",
 }
 
 unknown_new_admin_risk = {
     parent: unknown_new_admin,
     text: { name: "Baixo risco de alergia a penicilina" },
-    HTMLid: "l2_1_1",
+    HTMLid: "l3_1_1",
     HTMLclass: "final-node",
 
 
@@ -200,13 +200,16 @@ unknown_severe = {
     text: {
         name: "Reação severa (hospitalização, epinefrina, ...)",
     },
-    HTMLid: "l2_2",
+    HTMLid: "l3_2",
 
     collapsed: true,
 }
 unknown_severe_risk = {
     parent: unknown_severe,
-    text: { name: "Alto risco de alergia a penicilina" }
+    text: { name: "Alto risco de alergia a penicilina" },
+    HTMLclass: "final-node",
+    HTMLid: "l3_2_1",
+
 }
 
 unknown_normal = {
@@ -406,56 +409,56 @@ below_2_normal_no_skin_other_risk = {
     text: { name: "Baixo risco de alergia a penicilina" }
 }
 
-chart_config = [config,rootnode
-    ,above2
-    ,above_2_new_admin
-    ,above_2_new_admin_risk
-    ,above_2_severe
-    ,above_2_severe_risk
-    ,above_2_acute
-    ,above_2_acute_risk
-    ,above_2_normal
-    ,above_2_normal_skin
-    ,above_2_normal_skin_Mucosal
-    ,above_2_normal_skin_Mucosal_risk
-    ,above_2_normal_skin_below48
-    ,above_2_normal_skin_below48_risk
-    ,above_2_normal_skin_above48
-    ,above_2_normal_skin_above48_risk
-    ,above_2_normal_no_skin
-    ,above_2_normal_no_skin_risk
-    ,unknown
-    ,unknown_new_admin
-    ,unknown_new_admin_risk
-    ,unknown_severe
-    ,unknown_severe_risk
-    ,unknown_normal
-    ,unknown_normal_duration
-    ,unknown_normal_duration_below24
-    ,unknown_normal_duration_below24_risk
-    ,unknown_normal_duration_24_48
-    ,unknown_normal_duration_24_48_risk
-    ,unknown_normal_duration_above48
-    ,unknown_normal_duration_above48_risk
-    ,unknown_normal_duration_unknown
-    ,unknown_normal_duration_unknown_risk
-    ,below2
-    ,below_2_new_admin
-    ,below_2_new_admin_risk
-    ,below_2_severe
-    ,below_2_severe_risk
-    ,below_2_normal
-    ,below_2_normal_skin
-    ,below_2_normal_skin_pruritus
-    ,below_2_normal_skin_pruritus_above_24h
-    ,below_2_normal_skin_pruritus_above_24h_risk
-    ,below_2_normal_skin_pruritus_below_24h
-    ,below_2_normal_skin_pruritus_below_24h_risk
-    ,below_2_normal_skin_no_pruritus
-    ,below_2_normal_skin_no_pruritus_risk
-    ,below_2_normal_no_skin
-    ,below_2_normal_no_skin_asthma
-    ,below_2_normal_no_skin_asthma_risk
-    ,below_2_normal_no_skin_other
-    ,below_2_normal_no_skin_other_risk
-    ]
+chart_config = [config, rootnode
+    , above2
+    , above_2_new_admin
+    , above_2_new_admin_risk
+    , above_2_severe
+    , above_2_severe_risk
+    , above_2_acute
+    , above_2_acute_risk
+    , above_2_normal
+    , above_2_normal_skin
+    , above_2_normal_skin_Mucosal
+    , above_2_normal_skin_Mucosal_risk
+    , above_2_normal_skin_below48
+    , above_2_normal_skin_below48_risk
+    , above_2_normal_skin_above48
+    , above_2_normal_skin_above48_risk
+    , above_2_normal_no_skin
+    , above_2_normal_no_skin_risk
+    , unknown
+    , unknown_new_admin
+    , unknown_new_admin_risk
+    , unknown_severe
+    , unknown_severe_risk
+    , unknown_normal
+    , unknown_normal_duration
+    , unknown_normal_duration_below24
+    , unknown_normal_duration_below24_risk
+    , unknown_normal_duration_24_48
+    , unknown_normal_duration_24_48_risk
+    , unknown_normal_duration_above48
+    , unknown_normal_duration_above48_risk
+    , unknown_normal_duration_unknown
+    , unknown_normal_duration_unknown_risk
+    , below2
+    , below_2_new_admin
+    , below_2_new_admin_risk
+    , below_2_severe
+    , below_2_severe_risk
+    , below_2_normal
+    , below_2_normal_skin
+    , below_2_normal_skin_pruritus
+    , below_2_normal_skin_pruritus_above_24h
+    , below_2_normal_skin_pruritus_above_24h_risk
+    , below_2_normal_skin_pruritus_below_24h
+    , below_2_normal_skin_pruritus_below_24h_risk
+    , below_2_normal_skin_no_pruritus
+    , below_2_normal_skin_no_pruritus_risk
+    , below_2_normal_no_skin
+    , below_2_normal_no_skin_asthma
+    , below_2_normal_no_skin_asthma_risk
+    , below_2_normal_no_skin_other
+    , below_2_normal_no_skin_other_risk
+]

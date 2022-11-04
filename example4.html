@@ -24,62 +24,32 @@
     
     <script src="decisiontree-1.js"></script>
     <script>
+      
+var data = {
+    "l1_1_1": "Período igual ou superior a 2 horas -> Nova Administração sem reacção",
+    "l1_2_1": "Período igual ou superior a 2 horas -> Reacção Severa",
+    "l1_3_1": "Período igual ou superior a 2 horas -> Hepatite aguda, pneumonite hipersensível, agranulocitose ou vasculite",
+    "l1_4_1_1_1": "Período igual ou superior a 2 horas -> Sem Reação Grave -> Com Envolvimento da Pele -> Lesões Mucosais",
+    "l1_4_1_2_1": "Período igual ou superior a 2 horas -> Sem Reação Grave -> Com Envolvimento da Pele -> Duração sintomas inferior a 48 horas",
+    "l1_4_1_3_1": "Período igual ou superior a 2 horas -> Sem Reação Grave -> Com Envolvimento da Pele -> Duração sintomas superior a 48 horas",
+    "l1_4_2_1": "Período igual ou superior a 2 horas -> Sem Reação Grave -> Sem Envolvimento da Pele",
+    "l2_1_1": "Período inferior a 2 horas -> Nova Administração sem reacção",
+    "l2_2_1": "Período inferior a 2 horas -> Reacção Severa",
+    "l2_3_1_1_1": "Período inferior a 2 horas -> Sem Reação Grave -> Com Envolvimento da Pele -> Com Prurido -> Duração dos sintomas superior a 24 horas",
+    "l2_3_1_1_1": "Período inferior a 2 horas -> Sem Reação Grave -> Com Envolvimento da Pele -> Com Prurido -> Duração dos sintomas inferior a 24 horas",
+    "l2_3_1_2_1": "Período inferior a 2 horas -> Sem Reação Grave -> Com Envolvimento da Pele -> Sem Prurido -> ",
+    "l3_2_1":"Período Desconhecido -> Reacção Severa",
+    "l3_1_1":"Período Desconhecido -> Nova Administração sem reacção"
+
+};
+
         tree = new Treant( chart_config );
     </script>
     <div>
         <p><b>Caminho:</b> </p><p id="caminho"> </p>
          
-         <p><b> Resultado:</b>  <div id="resultado"><py-script>
-
-            from pyodide.ffi   import create_proxy
-            from js import document, console
-
-            data={"l1_1_1":"Período igual ou superior a 2 horas -> Nova Administração sem reacção",
-            "l1_2_1":"Período igual ou superior a 2 horas -> Reacção Severa",
-            "l2_1_1":"Período inferior a 2 horas -> Nova Administração sem reacção"}
-
-            def get_path(id,data=data):
-                if data[id]:
-                    return data[id]
-                else:
-                    return ""
-
-
-            def check_final_node(*kwargs):
-                p=document.getElementsByClassName('node')
-                console.log(p)
-                final_node_count=0
-                for i in p:
-                    if i.style.visibility=='visible':
-                        if "final-node" in i.className:
-                            final_node_count+=1
-                            console.log(i.id)
-                        #    console.log(i.class)
-                            console.log(i.textContent)
-                            text_result=i.textContent
-                            id_to_get=i.id
-
-                print(final_node_count)
-
-                if final_node_count==1:
-                    Element('resultado').write(text_result)
-                    Element('caminho').write( get_path(id_to_get))
-                    
-                else:
-                    Element('resultado').write("")
-                    Element('caminho').write( '')
-
-
-
-
-            # Create a Python proxy for the callback function
-            # process_file() is your function to process events from FileReader
-            visibility_event = create_proxy(check_final_node)
-            #console.log("aqui aqui")
-            # Set the listener to the callback
-            check_final_node()
-         #   document.getElementById("collapsable-example").addEventListener("mouseover", visibility_event)
-            document.getElementById("collapsable-example").addEventListener("click", visibility_event)
+         <p><b> Resultado:</b>  <div id="resultado"><py-script src="main.py">
+           
 
           </py-script></div></p>
         <button id="btn2">Avançar</button>
