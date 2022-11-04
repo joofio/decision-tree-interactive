@@ -18,7 +18,7 @@ rootnode = {
         name: "Periodo de tempo entre o aparecimento do sintomas ",
         title: "e a primeira toma de penicilina"
     },
-    HTMLid: "intial_node",
+    HTMLid: "l0",
     HTMLclass: "mynode",
 }
 
@@ -38,12 +38,15 @@ above_2_new_admin = {
         title: "penicilina sem reacção"
     },
     HTMLid: "l2_1",
-    HTMLclass: "mynode",
 }
 
 above_2_new_admin_risk = {
     parent: above_2_new_admin,
-    text: { name: "Baixo risco de alergia a penicilina" }
+    text: { name: "Baixo risco de alergia a penicilina" },
+    HTMLid: "l3_1",
+    HTMLclass: "final-node",
+
+
 }
 
 above_2_severe = {
@@ -57,7 +60,9 @@ above_2_severe = {
 
 above_2_severe_risk = {
     parent: above_2_severe,
-    text: { name: "Alto risco de alergia a penicilina" }
+    text: { name: "Alto risco de alergia a penicilina" },
+    HTMLclass: "final-node",
+
 }
 
 above_2_acute = {
@@ -71,7 +76,9 @@ above_2_acute = {
 
 above_2_acute_risk = {
     parent: above_2_acute,
-    text: { name: "Alto risco de alergia a penicilina" }
+    text: { name: "Alto risco de alergia a penicilina" },
+    HTMLid: "final-node",
+
 }
 
 above_2_normal = {
@@ -97,6 +104,8 @@ above_2_normal_skin_Mucosal_risk = {
     parent: above_2_normal_skin_Mucosal,
     text: { name: "Alto risco de alergia a penicilina" },
     HTMLclass: "mynode",
+    HTMLid: "final-node",
+
     
 }
 
@@ -110,6 +119,8 @@ above_2_normal_skin_below48_risk = {
     parent: above_2_normal_skin_below48,
     text: { name: "Baixo risco de alergia a penicilina" },
     HTMLclass: "mynode",
+    HTMLid: "final-node",
+
     
 }
 
@@ -123,6 +134,8 @@ above_2_normal_skin_above48_risk = {
     parent: above_2_normal_skin_above48,
     text: { name: "Alto risco de alergia a penicilina" },
     HTMLclass: "mynode",
+    HTMLid: "final-node",
+
     
 }
 
@@ -135,7 +148,9 @@ above_2_normal_no_skin = {
 }
 above_2_normal_no_skin_risk = {
     parent: above_2_normal_no_skin,
-    text: { name: "Baixo risco de alergia a penicilina" }
+    text: { name: "Baixo risco de alergia a penicilina" },
+    HTMLid: "final-node",
+
 }
 
 //////////////////
@@ -153,7 +168,7 @@ unknown = {
 unknown_new_admin = {
     parent: unknown,
     text: {
-        name: "Nova administraçãod de  ",
+        name: "Nova administração de  ",
         title: "penicilina sem reacção"
     },
     HTMLid: "l2_1",
@@ -373,7 +388,6 @@ below_2_normal_no_skin_other_risk = {
     text: { name: "Baixo risco de alergia a penicilina" }
 }
 
-
 chart_config = [config,rootnode
     ,above2
     ,above_2_new_admin
@@ -393,6 +407,20 @@ chart_config = [config,rootnode
     ,above_2_normal_no_skin
     ,above_2_normal_no_skin_risk
     ,unknown
+    ,unknown_new_admin
+    ,unknown_new_admin_risk
+    ,unknown_severe
+    ,unknown_severe_risk
+    ,unknown_normal
+    ,unknown_normal_duration
+    ,unknown_normal_duration_below24
+    ,unknown_normal_duration_below24_risk
+    ,unknown_normal_duration_24_48
+    ,unknown_normal_duration_24_48_risk
+    ,unknown_normal_duration_above48
+    ,unknown_normal_duration_above48_risk
+    ,unknown_normal_duration_unknown
+    ,unknown_normal_duration_unknown_risk
     ,below2
     ,below_2_new_admin
     ,below_2_new_admin_risk
