@@ -34,7 +34,8 @@
             from pyodide.ffi   import create_proxy
             from js import document, console
 
-            data={"l3_1":"Período igual ou superior a 2 horas -> Nova Administração sem reacção"}
+            data={"l1_1_1":"Período igual ou superior a 2 horas -> Nova Administração sem reacção",
+            "l1_2_1":"Período igual ou superior a 2 horas -> Reacção Severa"}
 
             def get_path(id,data=data):
                 if data[id]:

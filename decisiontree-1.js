@@ -37,6 +37,8 @@ above_2_new_admin = {
         name: "Nova administraçãod de  ",
         title: "penicilina sem reacção"
     },
+    collapsed: true,
+
     HTMLid: "l1_1",
 }
 
