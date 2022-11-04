@@ -30,16 +30,17 @@ def unselect_same_level(element):
                             "collapse-switch"
                         )[0]
                     )
-                    # pythonclick(document.getElementById(to_select))
-                    document.getElementById(to_select).getElementsByClassName(
-                        "collapse-switch"
-                    )[0].click()
+                    pythonclick(to_select)
+                #  document.getElementById(to_select).getElementsByClassName(
+                #      "collapse-switch"
+                #  )[0].click()
                 except Exception as e:
                     console.log(e)
                     console.log("failed")
 
 
 def check_final_node(*kwargs):
+    pointer_type = ""
     try:
         pointer_type = kwargs[0].pointerType
         print("pointer ->>" + pointer_type)
