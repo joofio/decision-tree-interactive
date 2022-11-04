@@ -25,7 +25,7 @@ rootnode = {
 above2 = {
     parent: rootnode,
     text: { name: "igual ou superior a 2 horas" },
-    HTMLid: "l1_1",
+    HTMLid: "l1",
     HTMLclass: "mynode",
     collapsed: true,
 }
@@ -37,13 +37,13 @@ above_2_new_admin = {
         name: "Nova administraçãod de  ",
         title: "penicilina sem reacção"
     },
-    HTMLid: "l2_1",
+    HTMLid: "l1_1",
 }
 
 above_2_new_admin_risk = {
     parent: above_2_new_admin,
     text: { name: "Baixo risco de alergia a penicilina" },
-    HTMLid: "l3_1",
+    HTMLid: "l1_1_1",
     HTMLclass: "final-node",
 
 
@@ -54,7 +54,7 @@ above_2_severe = {
     text: {
         name: "Reacão severa (hospitalização, epinefrina, ...)",
     },
-    HTMLclass: "mynode",
+    HTMLid: "l1_2",
     collapsed: true,
 }
 
@@ -62,6 +62,8 @@ above_2_severe_risk = {
     parent: above_2_severe,
     text: { name: "Alto risco de alergia a penicilina" },
     HTMLclass: "final-node",
+    HTMLid: "l1_2_1",
+
 
 }
 
@@ -70,7 +72,8 @@ above_2_acute = {
     text: {
         name: "Hepatite aguda, pneumonite hipersensível, agranulocitose ou vasculite",
     },
-    HTMLclass: "mynode",
+    HTMLid: "l1_3",
+
     collapsed: true,
 }
 
@@ -78,32 +81,35 @@ above_2_acute_risk = {
     parent: above_2_acute,
     text: { name: "Alto risco de alergia a penicilina" },
     HTMLid: "final-node",
+    HTMLid: "l1_3_1",
+
+    
 
 }
 
 above_2_normal = {
     parent: above2,
     text: { name: "Sem reacção Severa" },
-    HTMLclass: "mynode",
+    HTMLid: "l1_4",
     collapsed: true,
 }
 
 
 above_2_normal_skin = {
     parent: above_2_normal, text: { name: "Com Envolvimento Pele" },
-    HTMLclass: "mynode",
+    HTMLid: "l1_4_1",
     collapsed: true,
 }
 
 above_2_normal_skin_Mucosal = {
     parent: above_2_normal_skin, text: { name: "Lesões Mucosais e/ou bolhosa" },
-    HTMLclass: "mynode",
+    HTMLid: "l1_4_1_1",
     collapsed: true,
 }
 above_2_normal_skin_Mucosal_risk = {
     parent: above_2_normal_skin_Mucosal,
     text: { name: "Alto risco de alergia a penicilina" },
-    HTMLclass: "mynode",
+    HTMLid: "l1_4_1_1_1",
     HTMLid: "final-node",
 
     
@@ -111,14 +117,14 @@ above_2_normal_skin_Mucosal_risk = {
 
 above_2_normal_skin_below48 = {
     parent: above_2_normal_skin, text: { name: "Duração dos sintomas inferior a 48 horas" },
-    HTMLclass: "mynode",
+    HTMLid: "l1_4_1_2",
     collapsed: true,
 }
 
 above_2_normal_skin_below48_risk = {
     parent: above_2_normal_skin_below48,
     text: { name: "Baixo risco de alergia a penicilina" },
-    HTMLclass: "mynode",
+    HTMLid: "l1_4_1_2_1",
     HTMLid: "final-node",
 
     
@@ -126,15 +132,15 @@ above_2_normal_skin_below48_risk = {
 
 above_2_normal_skin_above48 = {
     parent: above_2_normal_skin, text: { name: "Duração dos sintomas superior a 48 horas" },
-    HTMLclass: "mynode",
+    HTMLid: "l1_4_1_3",
     collapsed: true,
 }
 
 above_2_normal_skin_above48_risk = {
     parent: above_2_normal_skin_above48,
     text: { name: "Alto risco de alergia a penicilina" },
-    HTMLclass: "mynode",
-    HTMLid: "final-node",
+    HTMLclass: "final-node",
+    HTMLid: "l1_4_1_3_1",
 
     
 }
@@ -144,12 +150,15 @@ above_2_normal_skin_above48_risk = {
 above_2_normal_no_skin = {
     parent: above_2_normal, text: { name: "Sem Envolvimento Pele" },
     HTMLclass: "mynode",
+    HTMLid: "l1_4_2",
+
     collapsed: true,
 }
 above_2_normal_no_skin_risk = {
     parent: above_2_normal_no_skin,
     text: { name: "Baixo risco de alergia a penicilina" },
-    HTMLid: "final-node",
+    HTMLclass: "final-node",
+    HTMLid: "l1_4_2_1",
 
 }
 
@@ -159,8 +168,7 @@ above_2_normal_no_skin_risk = {
 unknown = {
     parent: rootnode,
     text: { name: "Desconhecido" },
-    HTMLid: "l1_3",
-    HTMLclass: "mynode",
+    HTMLid: "l2",
     collapsed: true,
 }
 
@@ -168,24 +176,30 @@ unknown = {
 unknown_new_admin = {
     parent: unknown,
     text: {
-        name: "Nova administração de  ",
+        name: "Nova administração de ",
         title: "penicilina sem reacção"
     },
+    collapsed: true,
+
     HTMLid: "l2_1",
-    HTMLclass: "mynode",
 }
 
 unknown_new_admin_risk = {
     parent: unknown_new_admin,
-    text: { name: "Baixo risco de alergia a penicilina" }
+    text: { name: "Baixo risco de alergia a penicilina" },
+    HTMLid: "l2_1_1",
+    HTMLclass: "final-node",
+
+
 }
 
 unknown_severe = {
     parent: unknown,
     text: {
-        name: "Reacão severa (hospitalização, epinefrina, ...)",
+        name: "Reação severa (hospitalização, epinefrina, ...)",
     },
-    HTMLclass: "mynode",
+    HTMLid: "l2_2",
+
     collapsed: true,
 }
 unknown_severe_risk = {
