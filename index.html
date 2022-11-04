@@ -25,8 +25,8 @@
     <script src="decisiontree-1.js"></script>
     <script>
 function pythonclick(_id){
-
-    document.getElementById(_id).getElementsByClassName("collapse-switch")[0].click();
+    console.log( document.getElementById(_id).getElementsByClassName("collapse-switch")[0]);
+    return document.getElementById(_id).getElementsByClassName("collapse-switch")[0].click();
 };
 
 

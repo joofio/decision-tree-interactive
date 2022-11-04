@@ -1,5 +1,6 @@
 from pyodide.ffi import create_proxy
 from js import document, console, data, pythonclick
+import time
 
 
 def get_path(id, data=data):
@@ -25,17 +26,17 @@ def unselect_same_level(element):
                 to_select = select_base + "_" + str(i)
                 console.log("to unselect", to_select)
                 try:
-                    console.log(
-                        document.getElementById(to_select).getElementsByClassName(
-                            "collapse-switch"
-                        )[0]
-                    )
-                    pythonclick(to_select)
+
+                    time.sleep(5)
+
+                    console.log(document.getElementById(to_select))
+                    fn = create_proxy(pythonclick)
+                    fn(to_select)
                 #  document.getElementById(to_select).getElementsByClassName(
                 #      "collapse-switch"
                 #  )[0].click()
                 except Exception as e:
-                    console.log(e)
+                    print("error", e)
                     console.log("failed")
 
 
@@ -43,11 +44,11 @@ def check_final_node(*kwargs):
     pointer_type = ""
     try:
         pointer_type = kwargs[0].pointerType
-        print("pointer ->>" + pointer_type)
+        # print("pointer ->>" + pointer_type)
     except Exception as e:
         print(e)
 
-    if pointer_type != "":  # these are triggered by this function
+    if pointer_type == "mouse":  # these are triggered by this function
         # print("HERRRRE")
         unselect_same_level(kwargs[0])
     p = document.getElementsByClassName("node")
@@ -79,7 +80,6 @@ def check_final_node(*kwargs):
 # Create a Python proxy for the callback function
 # process_file() is your function to process events from FileReader
 visibility_event = create_proxy(check_final_node)
-# console.log("aqui aqui")
 # Set the listener to the callback
 # check_final_node()
 #   document.getElementById("collapsable-example").addEventListener("mouseover", visibility_event)
