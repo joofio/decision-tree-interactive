@@ -25,19 +25,15 @@ def unselect_same_level(element):
                 # select_id.split("_")[0:-1]
                 to_select = select_base + "_" + str(i)
                 console.log("to unselect", to_select)
-                try:
 
-                    time.sleep(5)
-
-                    console.log(document.getElementById(to_select))
-                    fn = create_proxy(pythonclick)
-                    fn(to_select)
+                #  console.log(document.getElementById(to_select))
+                pythonclick(to_select)
                 #  document.getElementById(to_select).getElementsByClassName(
                 #      "collapse-switch"
                 #  )[0].click()
-                except Exception as e:
-                    print("error", e)
-                    console.log("failed")
+
+
+safeguard = create_proxy(unselect_same_level)
 
 
 def check_final_node(*kwargs):
@@ -49,8 +45,8 @@ def check_final_node(*kwargs):
         print(e)
 
     if pointer_type == "mouse":  # these are triggered by this function
-        # print("HERRRRE")
-        unselect_same_level(kwargs[0])
+        print("HERRRRE")
+        safeguard(kwargs[0])
     p = document.getElementsByClassName("node")
     # console.log(p)
     final_node_count = 0
@@ -69,8 +65,8 @@ def check_final_node(*kwargs):
     if final_node_count == 1:
         Element("resultado").write(text_result)
         Element("caminho").write(get_path(id_to_get))
-    #  console.log(text_result)
-    #   console.log(id_to_get)
+        #  console.log(text_result)
+        #   console.log(id_to_get)
 
     else:
         Element("resultado").write("")
@@ -81,8 +77,7 @@ def check_final_node(*kwargs):
 # process_file() is your function to process events from FileReader
 visibility_event = create_proxy(check_final_node)
 # Set the listener to the callback
-# check_final_node()
-#   document.getElementById("collapsable-example").addEventListener("mouseover", visibility_event)
-document.getElementById("collapsable-example").addEventListener(
-    "click", visibility_event
-)
+document.getElementById("l1_1").getElementsByClassName("collapse-switch")[0].click()
+nodes = document.getElementsByClassName("node")
+for node in nodes:
+    node.addEventListener("click", visibility_event)

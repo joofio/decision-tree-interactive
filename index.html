@@ -26,7 +26,11 @@
     <script>
 function pythonclick(_id){
     console.log( document.getElementById(_id).getElementsByClassName("collapse-switch")[0]);
-    return document.getElementById(_id).getElementsByClassName("collapse-switch")[0].click();
+     document.getElementById(_id).getElementsByClassName("collapse-switch")[0].click();
+     document.getElementById("l1_1").getElementsByClassName("collapse-switch")[0].click();
+     document.getElementById("l1_1").click();
+
+     console.log(typeof(document.getElementById("l1_1").getElementsByClassName("collapse-switch")[0]));
 };
 
 
