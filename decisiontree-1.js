@@ -19,7 +19,12 @@ rootnode = {
         title: "e a primeira toma de penicilina"
     },
     HTMLid: "l0",
-    HTMLclass: "mynode",
+    connectors: {
+        style: {
+            'stroke': '#bbb',
+            'arrow-end': 'oval-wide-long'
+        }
+    },
 }
 
 above2 = {
