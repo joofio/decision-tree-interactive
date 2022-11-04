@@ -35,7 +35,8 @@
             from js import document, console
 
             data={"l1_1_1":"Período igual ou superior a 2 horas -> Nova Administração sem reacção",
-            "l1_2_1":"Período igual ou superior a 2 horas -> Reacção Severa"}
+            "l1_2_1":"Período igual ou superior a 2 horas -> Reacção Severa",
+            "l2_1_1":"Período inferior a 2 horas -> Nova Administração sem reacção"}
 
             def get_path(id,data=data):
                 if data[id]:
@@ -74,10 +75,11 @@
             # Create a Python proxy for the callback function
             # process_file() is your function to process events from FileReader
             visibility_event = create_proxy(check_final_node)
-            console.log("aqui aqui")
+            #console.log("aqui aqui")
             # Set the listener to the callback
             check_final_node()
-            document.getElementById("collapsable-example").addEventListener("mouseover", visibility_event)
+         #   document.getElementById("collapsable-example").addEventListener("mouseover", visibility_event)
+            document.getElementById("collapsable-example").addEventListener("click", visibility_event)
 
           </py-script></div></p>
         <button id="btn2">Avançar</button>

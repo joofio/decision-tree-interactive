@@ -34,7 +34,7 @@ above2 = {
 above_2_new_admin = {
     parent: above2,
     text: {
-        name: "Nova administraçãod de  ",
+        name: "Nova administração de  ",
         title: "penicilina sem reacção"
     },
     collapsed: true,
@@ -292,7 +292,7 @@ below2 = {
 below_2_new_admin = {
     parent: below2,
     text: {
-        name: "Nova administraçãod de  ",
+        name: "Nova administração de  ",
         title: "penicilina sem reacção"
     },
     HTMLid: "l2_1",
@@ -301,7 +301,9 @@ below_2_new_admin = {
 
 below_2_new_admin_risk = {
     parent: below_2_new_admin,
-    text: { name: "Baixo risco de alergia a penicilina" }
+    text: { name: "Baixo risco de alergia a penicilina" },
+    HTMLid: "l2_1_1",
+
 }
 
 below_2_severe = {
