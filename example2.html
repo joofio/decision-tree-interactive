@@ -22,7 +22,7 @@
     <script src="treant-js-master/vendor/jquery.easing.js"></script>
     
     
-    <script src="collapsable.js"></script>
+    <script src="decisiontree-1.js"></script>
     <script>
         tree = new Treant( chart_config );
     </script>
@@ -36,32 +36,41 @@
                 return pi
       
             pi = compute_pi(100000)
-            pyscript.write('pi', f'π is approximately {pi:.3f}')
+            Element('pi').write( f'π is approximately {pi:.3f}')
           </py-script>
          <p>Resultado:  <div id="resultado"><py-script>
             from pyodide.ffi   import create_proxy
+            from js import document, console
 
-            def assess():
-                if document.getElementById("finalroot-1").style.visibility == "hidden":
-                    #print(document.getElementById("finalroot-1").style.visibility)
-                    print("ook")
-                    pyscript.write('resultado', 'hidden')
+            def visibility_(*kwargs):
+                el=document.getElementById("finalroot-1")
+                if el.style.visibility == "hidden":
+                    #print(el.style.visibility)
+                    console.log("hidden")
+                    Element('resultado').write( 'hidden')
                 else:
-                    pyscript.write('resultado', 'visible')
+                    console.log("visible")
+
+                    Element('resultado').write( 'visible')
 
                  
-            def main():
-                # Create a Python proxy for the callback function
-                # process_file() is your function to process events from FileReader
-                file_event = create_proxy(assess)
-            
-                # Set the listener to the callback
-                e = document.getElementById("finalroot-1")
-                print(e.style.visibility)
-                e.addEventListener("change", file_event, False)
+                    
+                    
+            p=document.getElementsByClassName('mynode')
+            console.log(p)
+            for i in p:
+                if i.style.visibility=='visible':
+                    #if "final" in i.id:
+                    console.log(i.id)
 
+            # Create a Python proxy for the callback function
+            # process_file() is your function to process events from FileReader
+            visibility_event = create_proxy(visibility_)
+            console.log("aqui aqui")
+            # Set the listener to the callback
+            visibility_()
+            document.getElementById("collapsable-example").addEventListener("mouseover", visibility_event)
 
-            main()
           </py-script></div></p>
         <button id="btn2">Avançar</button>
     </div>
