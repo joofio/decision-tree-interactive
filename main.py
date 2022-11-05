@@ -1,6 +1,5 @@
 from pyodide.ffi import create_proxy
 from js import document, console, data, pythonclick
-import time
 
 
 def get_path(id, data=data):
@@ -69,15 +68,14 @@ def check_final_node(*kwargs):
         #   console.log(id_to_get)
 
     else:
-        Element("resultado").write("")
-        Element("caminho").write("")
+        Element("resultado").write("Por favor percorra um único caminho até o final")
+        Element("caminho").write("Por favor percorra um único caminho até o final")
 
 
 # Create a Python proxy for the callback function
 # process_file() is your function to process events from FileReader
 visibility_event = create_proxy(check_final_node)
 # Set the listener to the callback
-document.getElementById("l1_1").getElementsByClassName("collapse-switch")[0].click()
 nodes = document.getElementsByClassName("node")
 for node in nodes:
     node.addEventListener("click", visibility_event)

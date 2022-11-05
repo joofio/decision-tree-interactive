@@ -1,17 +1,17 @@
 var config = {
     container: "#collapsable-example",
 
-    animateOnInit: true,
+  //  animateOnInit: true,
 
     node: {
         collapsable: true
-    },
-    animation: {
-        nodeAnimation: "easeOutBounce",
-        nodeSpeed: 700,
-        connectorsAnimation: "bounce",
-        connectorsSpeed: 700
     }
+ //   animation: {
+   //     nodeAnimation: "easeOutBounce",
+   //     nodeSpeed: 700,
+   //     connectorsAnimation: "bounce",
+   //     connectorsSpeed: 700
+   // }
 }
 rootnode = {
     text: {
